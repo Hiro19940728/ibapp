@@ -26,7 +26,7 @@ if uploaded_file is not None:
     selected_rows = []
 
     for name, group in df.groupby("1. Name"):
-        st.subheader(f"さん: {name}")
+        st.subheader(f"{name}")
         test_dates = group["14. Test Date / Time"].unique()
         selected_date = st.selectbox(f"{name} さんの測定日を選んでください", test_dates, key=name)
         selected_row = group[group["14. Test Date / Time"] == selected_date]
